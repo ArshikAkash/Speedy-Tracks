@@ -1,0 +1,40 @@
+import React, { useState } from 'react';
+import './Home.css';
+import fakeData from '../../fakeData/fakeData.json';
+
+const Home = () => {
+    const [vehicles] = useState(fakeData);
+    return (
+        <div className='banner-text'>
+            <h1>
+                Choose <span id='paste'>Your</span> Ride{' '}
+                <span id='paste'>...</span>
+            </h1>
+            <div className='container'>
+                {vehicles.map((vehicle) => (
+                    <div className='body'>
+                        <div>
+                            <div className='card'>
+                                <div className='face face1'>
+                                    <div className='content'>
+                                        <img src={vehicle.image} alt=''></img>
+                                        <h3>{vehicle.name}</h3>
+                                    </div>
+                                </div>
+                                <div className='face face2'>
+                                    <div className='content'>
+                                        <p>{vehicle.description}</p>
+                                        <h5>Cost:${vehicle.cost}</h5>
+                                        <button>Confirm Ride</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default Home;

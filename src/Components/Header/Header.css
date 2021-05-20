@@ -1,0 +1,114 @@
+.header {
+    position: initial;
+    max-width: 1200px;
+    margin: 00px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    height: 80px;
+}
+.logo {
+    height: 100px;
+    cursor: pointer;
+    padding: 0 0px;
+    margin-bottom: -20px;
+    margin-top: -10px;
+    float: left;
+}
+nav {
+    float: right;
+}
+.clearfix {
+    clear: both;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    list-style: none;
+}
+nav ul li .a {
+    display: block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ececec;
+}
+nav ul li .a.active,
+nav ul li .a:hover {
+    background: #069370;
+    color: aliceblue;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+@media (max-width: 1200px) {
+    .header {
+        margin: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .toggle {
+        position: relative;
+        display: flex;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        background: #458492;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    .toggle::before {
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 2px;
+        background: white;
+        transform: translateY(-5px);
+        transition: 0.5s;
+    }
+    .toggle::after {
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 2px;
+        background: white;
+        transform: translateY(5px);
+        transition: 0.5s;
+    }
+    .toggle.active::before {
+        transform: translateY(0px) rotate(45deg);
+        transition: 0.5s;
+    }
+    .toggle.active::after {
+        transform: translateY(0px) rotate(-45deg);
+        transition: 0.5s;
+    }
+    .toggle.active {
+        background: rgb(25, 125, 143);
+    }
+    nav {
+        display: none;
+    }
+    nav.active {
+        display: block;
+        width: 100%;
+        transform-style: initial;
+        transition: 0.5s;
+    }
+    nav.active ul {
+        display: block;
+    }
+    nav.active ul li {
+        margin: 0;
+    }
+}

@@ -1,0 +1,31 @@
+[
+	{
+		"id": 1,
+		"name": "Bus",
+		"cost": 100,
+		"image": "https://i.postimg.cc/8zRqHsn5/bus.png",
+		"description":"This is the cheapest ride of our service. This ride will cost you 100 bucks per trip.And it's also comfortable . Happy journey🖤 "
+	},
+	{
+		"id": 2,
+		"name": "Bike",
+		"cost": 250,
+		"image": "https://i.postimg.cc/sgdk75mq/motorcycle.png",
+		"description":"This is less cheapest ride of our service. This ride will cost you 250 bucks per trip.And it's also comfortable and enjoyable . Happy journey🖤 "
+	},
+	{
+		"id": 3,
+		"name": "Car",
+		"cost": 500,
+		"image": "https://i.postimg.cc/BQKWjmT2/car.png",
+		"description":"This is a premium ride of our service. This ride will cost you 500 bucks per trip.And it's also comfortable & safe . Happy journey🖤 "
+	},
+	{
+		"id": 4,
+		"name": "Airplane",
+		"cost": 1000,
+		"image": "https://i.postimg.cc/QNPGN2TX/airplane.png",
+		"description":"This is the most luxury ride of our service. This ride will cost you 1000 bucks per trip.And it's just awesome . Happy journey🖤 "
+	}
+	
+]
