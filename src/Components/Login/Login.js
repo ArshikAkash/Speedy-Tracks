@@ -1,9 +1,63 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css';
 import signInImage from './../../images/signIn.jpg';
 import signUpImage from './../../images/signUp.jpg';
+import { Button } from '@material-ui/core';
+import google from './../../images/google.png';
+import { useHistory, useLocation } from 'react-router';
+import { UserContext } from '../../App';
+import {
+    handleFbSignIn,
+    handleGitSignIn,
+    handleGoogleSignIn,
+    initializeLoginFrameWork,
+} from './LoginManager';
+
+initializeLoginFrameWork();
 
 const Login = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const [user, setUser] = useState({
+        isSignedIn: false,
+        name: '',
+        email: '',
+        password: '',
+        photo: '',
+    });
+
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: '/destination' } };
+
+    const googleSignIn = () => {
+        handleGoogleSignIn().then((res) => {
+            handleResponse(res, true);
+        });
+    };
+
+    const fbSignIn = () => {
+        handleFbSignIn().then((res) => {
+            handleResponse(res, true);
+        });
+    };
+
+    const gitSignIn = () => {
+        handleGitSignIn().then((res) => {
+            handleResponse(res, true);
+        });
+    };
+
+    const handleResponse = (res, redirect) => {
+        setUser(res);
+        setLoggedInUser(res);
+        if (redirect) {
+            history.replace(from);
+        }
+    };
+
+    console.log('loggedInUser', loggedInUser, 'user', user);
+
     const [isActive, setActive] = useState('false');
     const handleToggle = () => {
         setActive(!isActive);
@@ -36,6 +90,52 @@ const Login = () => {
                                         </a>
                                     </span>
                                 </p>
+
+                                <Button
+                                    variant='contained'
+                                    onClick={googleSignIn}
+                                    style={{
+                                        borderRadius: '50%',
+                                        width: '60px',
+                                        height: '60px',
+                                    }}
+                                >
+                                    <img
+                                        style={{ width: '200%' }}
+                                        src={google}
+                                        alt=''
+                                    />
+                                </Button>
+                                <Button
+                                    variant='contained'
+                                    onClick={fbSignIn}
+                                    style={{
+                                        borderRadius: '50%',
+                                        width: '60px',
+                                        height: '60px',
+                                    }}
+                                >
+                                    <img
+                                        style={{ width: '200%' }}
+                                        src={google}
+                                        alt=''
+                                    />
+                                </Button>
+                                <Button
+                                    variant='contained'
+                                    onClick={gitSignIn}
+                                    style={{
+                                        borderRadius: '50%',
+                                        width: '60px',
+                                        height: '60px',
+                                    }}
+                                >
+                                    <img
+                                        style={{ width: '200%' }}
+                                        src={google}
+                                        alt=''
+                                    />
+                                </Button>
                             </form>
                         </div>
                     </div>

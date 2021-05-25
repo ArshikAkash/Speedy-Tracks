@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import './Home.css';
 import fakeData from '../../fakeData/fakeData.json';
+import { useHistory } from 'react-router';
 
 const Home = () => {
     const [vehicles] = useState(fakeData);
+    const history = useHistory();
+    const handleDestination = (bedType) => {
+        history.push(`/destination`);
+    };
     return (
         <div className='banner-text'>
             <h1>
@@ -25,7 +30,11 @@ const Home = () => {
                                     <div className='content'>
                                         <p>{vehicle.description}</p>
                                         <h5>Cost:${vehicle.cost}</h5>
-                                        <button>Confirm Ride</button>
+                                        <button
+                                            onClick={() => handleDestination()}
+                                        >
+                                            Confirm Ride
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -37,6 +37,7 @@ nav ul li .a {
     text-decoration: none;
     color: #ececec;
 }
+
 nav ul li .a.active,
 nav ul li .a:hover {
     background: #069370;
@@ -44,6 +45,14 @@ nav ul li .a:hover {
     transition: 0.5s;
     border-radius: 5px;
 }
+nav ul li .a.active:hover {
+    transition: 0.5s;
+    border-radius: 5px;
+    border: 2px solid #47b196;
+    background: #06937055;
+    font-size: 18px;
+}
+
 @media (max-width: 1200px) {
     .header {
         margin: 20px;
@@ -62,7 +71,7 @@ nav ul li .a:hover {
         cursor: pointer;
         text-align: center;
         font-size: 30px;
-        background: #458492;
+        background: #069370;
         align-items: center;
         justify-content: center;
         border-radius: 10px;
@@ -94,7 +103,7 @@ nav ul li .a:hover {
         transition: 0.5s;
     }
     .toggle.active {
-        background: rgb(25, 125, 143);
+        background: #069370;
     }
     nav {
         display: none;
@@ -102,13 +111,14 @@ nav ul li .a:hover {
     nav.active {
         display: block;
         width: 100%;
-        transform-style: initial;
         transition: 0.5s;
     }
     nav.active ul {
         display: block;
+        transition: 0.5s;
     }
     nav.active ul li {
         margin: 0;
+        transition: 0.5s;
     }
 }
