@@ -10,7 +10,14 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.welcomeMsg {
+    margin-left: 37%;
+    display: flex;
+    color: #ffffff6c;
+}
+.welcomeMsg img {
+    margin-left: 3%;
+}
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -35,6 +42,16 @@
 
 .App-link {
     color: #61dafb;
+}
+@media (max-width: 900px) {
+    .welcomeMsg {
+        margin-left: 18%;
+        display: flex;
+        color: #ffffff9a;
+    }
+    .welcomeMsg img {
+        margin-left: 10%;
+    }
 }
 
 @keyframes App-logo-spin {

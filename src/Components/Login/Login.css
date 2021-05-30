@@ -143,6 +143,76 @@
 .section .container.active .signInBox .imgBox {
     top: -100%;
 }
+.continue {
+    text-align: center;
+    color: #555;
+    border-bottom: 1px solid gray;
+    transition: all 0.8s ease-out;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.wrapper {
+    margin-top: 10px;
+    margin-left: -10px;
+}
+.wrapper .button {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+    background: rgb(197, 197, 197);
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-out;
+    overflow: hidden;
+}
+.wrapper .button:hover {
+    width: 170px;
+}
+.wrapper .button .icon {
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
+    transition: all 0.4s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon {
+    background: rgb(219, 68, 68);
+    color: #ffffff;
+}
+.wrapper .button:nth-child(2):hover .icon {
+    background: #4267b2;
+    color: #fff;
+}
+.wrapper .button:nth-child(3):hover .icon {
+    background: #333;
+    color: #fff;
+}
+.wrapper .button:nth-child(1) span {
+    color: rgb(219, 68, 68);
+}
+.wrapper .button:nth-child(2) span {
+    color: #4267b2;
+}
+.wrapper .button:nth-child(3) span {
+    color: #333;
+}
+.wrapper .button .icon .i {
+    padding-top: 10px;
+    font-size: 30px;
+    line-height: 50px;
+}
+.wrapper .button span {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: all 0.4s ease-out;
+}
 
 @media (max-width: 991px) {
     .section .container {

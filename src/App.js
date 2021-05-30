@@ -11,12 +11,31 @@ export const UserContext = createContext();
 
 function App() {
     const [loggedInUser, setLoggedInUser] = useState({});
+    const [user, setUser] = useState({});
+    console.log('this is logged in user info', loggedInUser);
     return (
         <div className='full-body'>
-            <div>
-                <h3>Welcome,{loggedInUser.name}</h3>
+            <div className='welcomeMsg'>
+                {loggedInUser.success ? (
+                    <h3>
+                        Welcome,{loggedInUser.displayName || loggedInUser.name}
+                    </h3>
+                ) : (
+                    <h2> </h2>
+                )}
+                {loggedInUser.success ? (
+                    <img
+                        style={{ width: '50px', borderRadius: '50%' }}
+                        src={loggedInUser.photo}
+                        alt=''
+                    />
+                ) : (
+                    <h1> </h1>
+                )}
             </div>
-            <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            <UserContext.Provider
+                value={[loggedInUser, setLoggedInUser, user, setUser]}
+            >
                 <Router>
                     <Header />
                     <Switch>

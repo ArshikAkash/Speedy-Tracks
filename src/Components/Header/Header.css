@@ -50,7 +50,7 @@ nav ul li .a.active:hover {
     border-radius: 5px;
     border: 2px solid #47b196;
     background: #06937055;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 @media (max-width: 1200px) {

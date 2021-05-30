@@ -73,12 +73,20 @@ export const handleGitSignIn = () => {
         .signInWithPopup(gitProvider)
         .then((result) => {
             /** @type {firebase.auth.OAuthCredential} */
+            const { displayName, photoURL, email } = result.user;
+            const signedInUser = {
+                isSignedIn: true,
+                name: displayName,
+                email: email,
+                photo: photoURL,
+                success: true,
+            };
+
             var credential = result.credential;
-            var user = result.user;
-            user.success = true;
-            var accessToken = credential.accessToken;
-            console.log(accessToken);
-            return user;
+            var token = credential.accessToken;
+            console.log(token);
+
+            return signedInUser;
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -115,11 +123,9 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
         .createUserWithEmailAndPassword(email, password)
         .then((res) => {
             // Signed in
-
             const newUserInfo = res.user;
             newUserInfo.error = '';
             newUserInfo.success = true;
-
             updateUserName(name);
             return newUserInfo;
         })
@@ -162,7 +168,6 @@ export const signInWithEmailAndPassword = (email, password) => {
 
 const updateUserName = (name) => {
     const user = firebase.auth().currentUser;
-
     user.updateProfile({
         displayName: name,
     })

@@ -17,7 +17,7 @@ const Home = () => {
             </h1>
             <div className='container'>
                 {vehicles.map((vehicle) => (
-                    <div className='body'>
+                    <div key={vehicle.id} className='body'>
                         <div>
                             <div className='card'>
                                 <div className='face face1'>
